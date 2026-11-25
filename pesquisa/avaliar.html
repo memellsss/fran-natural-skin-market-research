@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Vale a compra? | FRAN Natural Skin</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script defer src="avaliar.js"></script>
+</head>
+<body>
+  <main>
+    <p class="tag">ESTUDO INDEPENDENTE · PROTÓTIPO</p>
+    <h1>Você compraria esta base?</h1>
+    <p>Questionário de conceito para maiores de 18 anos no Brasil. Nenhuma resposta é enviada. Você pode baixar suas escolhas ao final.</p>
+    <section aria-labelledby="conceito">
+      <h2 id="conceito">O cenário</h2>
+      <p>Base líquida FRAN Natural Skin, 30 mL, com textura fluida, cobertura média construível, acabamento natural e 20 tonalidades declaradas. Imagine que esteja disponível por <strong>R$ 94</strong>. É um preço de teste, não uma oferta.</p>
+      <p id="cenario"></p>
+    </section>
+    <noscript><p>Ative o JavaScript para responder e baixar o arquivo. Nenhum dado será enviado pela internet.</p></noscript>
+    <form id="avaliacao" hidden>
+      <label for="elegivel">Você tem 18 anos ou mais, mora no Brasil e usa ou considera comprar base?</label>
+      <select id="elegivel" name="elegivel" required>
+        <option value="">Selecione</option><option value="sim">Sim</option><option value="nao">Não</option>
+      </select>
+      <label for="experiencia">Você já usou esta base específica?</label>
+      <select id="experiencia" name="experiencia" required>
+        <option value="">Selecione</option><option value="usei">Sim, já usei a Natural Skin</option>
+        <option value="nao_usei">Não</option><option value="nao_sei">Não tenho certeza da versão</option>
+      </select>
+      <label for="confianca">Quão confiante você estaria em escolher a cor nessa página?</label>
+      <select id="confianca" name="confianca" required>
+        <option value="">Selecione</option><option value="1">1 — Nada confiante</option><option value="2">2</option>
+        <option value="3">3 — Mais ou menos</option><option value="4">4</option><option value="5">5 — Muito confiante</option>
+      </select>
+      <label for="indecisao">Você conseguiria escolher um tom sem ir à loja?</label>
+      <select id="indecisao" name="escolheria_tom" required>
+        <option value="">Selecione</option><option value="sim">Sim</option><option value="nao">Não</option>
+        <option value="nao_sei">Ainda não sei</option>
+      </select>
+      <label for="compra">Qual seria a chance de você comprar por R$ 94 nos próximos 30 dias?</label>
+      <select id="compra" name="intencao_compra" required>
+        <option value="">Selecione</option><option value="1">1 — Certamente não compraria</option><option value="2">2</option>
+        <option value="3">3 — Talvez</option><option value="4">4</option><option value="5">5 — Certamente compraria</option>
+      </select>
+      <label for="barreira">O que mais faria você hesitar ou desistir da compra?</label>
+      <select id="barreira" name="barreira" required>
+        <option value="">Selecione</option><option value="cor">Não ter certeza da cor</option>
+        <option value="acabamento">Não saber como fica na minha pele</option>
+        <option value="duracao">Não ter confiança na duração</option>
+        <option value="estoque">Não encontrar meu tom para comprar</option>
+        <option value="preco">Preço ou condições de compra</option>
+        <option value="outra">Outro motivo</option>
+        <option value="nenhuma">Nada me faria hesitar nesse cenário</option>
+      </select>
+      <label for="melhoria">Qual melhoria mais ajudaria na sua decisão?</label>
+      <select id="melhoria" name="melhoria" required>
+        <option value="">Selecione</option><option value="guia_tom">Guia de tom e subtom</option>
+        <option value="teste_uso">Ver cobertura e resultado após horas de uso</option>
+        <option value="disponibilidade">Ter meu tom disponível ou receber aviso de reposição</option>
+        <option value="embalagem">Distinguir melhor as versões pela embalagem</option>
+        <option value="preco">Preço ou condições de compra</option><option value="nenhuma">Nenhuma dessas</option>
+      </select>
+      <label for="estoque">Se seu tom estivesse indisponível, o que você provavelmente faria?</label>
+      <select id="estoque" name="sem_estoque" required>
+        <option value="">Selecione</option><option value="aviso">Pediria aviso de reposição</option>
+        <option value="espera">Voltaria depois sem pedir aviso</option><option value="outra_marca">Compraria de outra marca</option>
+        <option value="outro_tom">Compraria outra tonalidade</option><option value="desistiria">Não compraria base agora</option>
+        <option value="nao_sei">Não sei</option>
+      </select>
+      <button type="submit">Baixar minha resposta</button>
+      <p id="estado" role="status" aria-live="polite"></p>
+    </form>
+    <footer>Protótipo sem servidor, cadastro, câmera, cookies ou envio automático. Intenção declarada não equivale a uma compra.</footer>
+  </main>
+</body>
+</html>

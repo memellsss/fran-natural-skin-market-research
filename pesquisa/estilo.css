@@ -1,0 +1,20 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #302233;
+  background: #f8f1f5;
+  accent-color: #84184d;
+}
+
+body { margin: 0; }
+main { width: min(42rem, calc(100% - 2rem)); margin: 2rem auto 4rem; }
+h1 { font-size: clamp(2.25rem, 7vw, 3.5rem); line-height: 1.05; margin: 0.5rem 0 1rem; }
+h2 { margin: 0 0 0.75rem; }
+p, label, footer { line-height: 1.55; }
+.tag { font-weight: 750; color: #84184d; letter-spacing: 0.08em; font-size: 0.82rem; }
+section, form { background: white; border: 1px solid #e7d8e1; border-radius: 1rem; padding: clamp(1rem, 4vw, 2rem); margin: 1.5rem 0; }
+label { display: block; font-weight: 700; margin-bottom: 0.4rem; }
+select { display: block; width: 100%; font: inherit; color: inherit; padding: 0.7rem; margin-bottom: 1.3rem; border: 1px solid #927c8a; border-radius: 0.45rem; background: white; }
+button { font: inherit; font-weight: 750; border: 0; border-radius: 0.55rem; padding: 0.75rem 1rem; background: #84184d; color: white; cursor: pointer; }
+button:hover { background: #641039; }
+:focus-visible { outline: 3px solid #145957; outline-offset: 3px; }
+footer { font-size: 0.88rem; color: #5c4b57; }

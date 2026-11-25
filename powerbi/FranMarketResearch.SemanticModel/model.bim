@@ -1,0 +1,257 @@
+{
+  "name": "FranMarketResearch",
+  "compatibilityLevel": 1601,
+  "model": {
+    "culture": "pt-BR",
+    "sourceQueryCulture": "pt-BR",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "tables": [
+      {
+        "name": "Escopo da proposta",
+        "lineageTag": "6e531b61-dabd-5a77-8a3f-418e4cd82e1c",
+        "columns": [
+          {
+            "name": "Ordem",
+            "sourceColumn": "ordem",
+            "dataType": "int64",
+            "summarizeBy": "none",
+            "lineageTag": "253158f6-9607-51c4-8f43-1d74c09c2ead"
+          },
+          {
+            "name": "Elemento",
+            "sourceColumn": "elemento",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "1a017984-4640-594c-be9e-3906ddd0f34b"
+          },
+          {
+            "name": "Definição",
+            "sourceColumn": "definicao",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "085131d9-6e7a-5ec7-b445-fe290fffec73"
+          },
+          {
+            "name": "Limite",
+            "sourceColumn": "limite",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "a8707b9a-591a-52dc-bfd9-193fc359bf62"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Escopo da proposta",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Conteudo = Binary.FromText(\"b3JkZW0sZWxlbWVudG8sZGVmaW5pY2FvLGxpbWl0ZQoxLFByb2R1dG8gZGUgcmVmZXLDqm5jaWEsQmFzZSBMw61xdWlkYSBGUkFOIE5hdHVyYWwgU2tpbixOw6NvIGNvbmZ1bmRpciBjb20gUmVhbCBGaWx0ZXIgTWF0dGUuCjIsRGVjaXPDo28gZGUgbmVnw7NjaW8sVGVzdGFyIHVtIGd1aWEgYW50ZXMgZGUgYW1wbGlhciBhIGNhcnRlbGEgb3UgYWx0ZXJhciBhIGbDs3JtdWxhLE7Do28gcHJlc3VtaXIgYSBleGlzdMOqbmNpYSBkZSB1bSBwcm9ibGVtYSBkZSBmb3JtdWxhw6fDo28uCjMsUMO6YmxpY28gaW5pY2lhbCxBZHVsdG9zIG5vIEJyYXNpbCBxdWUgdXNhbSBvdSBjb25zaWRlcmFtIGNvbXByYXIgYmFzZSxBbW9zdHJhIGRlIGNvbnZlbmnDqm5jaWE7IG7Do28gcmVwcmVzZW50YSB0b2RvcyBvcyBjb21wcmFkb3Jlcy4KNCxEZXNlbmhvIGRlIGNvbmNlaXRvLEZpY2hhIHNpbXBsZXMgdmVyc3VzIGZpY2hhIHF1ZSBkZXNjcmV2ZSB1bSBndWlhIGRlIGNvcixDb21wYXJhIGEgcHJvcG9zdGEgZG8gZ3VpYSBlIG7Do28gdW0gZ3VpYSBmdW5jaW9uYWwuCjUsUHJlw6dvIGRvIGNlbsOhcmlvLFIkIDk0IGVtIGFtYm9zIG9zIGdydXBvcyxQcmXDp28gaGlwb3TDqXRpY28gZGUgdGVzdGU7IG7Do28gw6kgb2ZlcnRhIGNvbWVyY2lhbC4KNixTdGF0dXMsUHJvcG9zdGEgY29tIHF1ZXN0aW9uw6FyaW8gbG9jYWwgc2VtIHJlc3Bvc3RhcyBjb2xldGFkYXMsU2VtIG3DqXRyaWNhcyBkZSB2ZW5kYXMgb3UgcmVzdWx0YWRvcyBkbyBjb25zdW1pZG9yLgo=\", BinaryEncoding.Base64),",
+                "    Dados = Csv.Document(Conteudo, [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Cabecalhos = Table.PromoteHeaders(Dados, [PromoteAllScalars=true]),",
+                "    Tipos = Table.TransformColumnTypes(Cabecalhos, {{\"ordem\", Int64.Type}, {\"elemento\", type text}, {\"definicao\", type text}, {\"limite\", type text}}, \"pt-BR\")",
+                "in",
+                "    Tipos"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Benchmark",
+        "lineageTag": "9c4eca7b-ccc1-5cf3-867d-80cba389997a",
+        "columns": [
+          {
+            "name": "Ordem",
+            "sourceColumn": "ordem",
+            "dataType": "int64",
+            "summarizeBy": "none",
+            "lineageTag": "0fbbe861-ca79-5ed7-a09b-f660ba0e5e58"
+          },
+          {
+            "name": "Referência",
+            "sourceColumn": "referencia",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "ae6d0971-b27f-5678-b096-614d43f59d0a"
+          },
+          {
+            "name": "Contexto",
+            "sourceColumn": "escopo",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "465dfed2-a59d-54f3-bca7-0187efc7bfd7"
+          },
+          {
+            "name": "Prática observada",
+            "sourceColumn": "evidencia",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "9d42e3e7-d024-5905-999c-c906951635c5"
+          },
+          {
+            "name": "O que testar",
+            "sourceColumn": "aplicacao",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "453b0237-80d0-52cc-aaa5-8dd205e70fed"
+          },
+          {
+            "name": "Link da fonte",
+            "sourceColumn": "fonte",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "349308b6-8841-5f3c-9430-be2a3669fa00"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Benchmark",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Conteudo = Binary.FromText(\"b3JkZW0scmVmZXJlbmNpYSxlc2NvcG8sZXZpZGVuY2lhLGFwbGljYWNhbyxmb250ZQoxLEzigJlPcsOpYWwgUGFyaXMgVHJ1ZSBNYXRjaCxHdWlhIG9maWNpYWwgZG9zIEVVQTsgMzEvMTAvMjAyNSxMaW5ndWFnZW0gZGUgc3VidG9uczsgYW1vc3RyYXMgc29iIGx1eiBkaWZlcmVudGU7IGd1aWEgcG9yIHBlcmd1bnRhcy4sVGVzdGFyIHLDs3R1bG9zIGRlIHN1YnRvbSBlIGZvdG9zIGVtIGx1eiBjb21wYXLDoXZlbC4saHR0cHM6Ly93d3cubG9yZWFscGFyaXN1c2EuY29tL2JlYXV0eS1tYWdhemluZS9tYWtldXAvZmFjZS1tYWtldXAvaG93LXRvLWZpbmQteW91ci1mb3VuZGF0aW9uLWNvbG9yLW1hdGNoCjIsTWF5YmVsbGluZSBGaXQgTWUgRnJlc2ggVGludCxTaXRlIG9maWNpYWwgbm8gQnJhc2lsOyBhcnRpZ28gcHVibGljYWRvIGVtIDIwMjUsVGVzdGFkb3IgdmlydHVhbCBwYXJhIGV4cGVyaW1lbnRhciB0b25hbGlkYWRlcyBkZSBpdGVucyBkYSBsaW5oYS4sQ29tcGFyYXIgdW0gZ3VpYSBlc3TDoXRpY28gY29tIHVtIHByb3TDs3RpcG8gZGUgcmVjb21lbmRhw6fDo28gYW50ZXMgZGUgaW52ZXN0aXIgZW0gcmVhbGlkYWRlIGF1bWVudGFkYS4saHR0cHM6Ly93d3cubWF5YmVsbGluZS5jb20uYnIvZGljYXMtZGUtbWFxdWlhZ2VtL3Jvc3RvL3NpdGUtcGFyYS1kZXNjb2JyaXItdG9tLWRlLWJhc2UKMyxCb2NhIFJvc2EgU3RpY2sgUGVsZSxNYXF1aWFnZW0gbmFjaW9uYWw7IE1hcmllIENsYWlyZTsgMTYvMTAvMjAyNCxDYXJ0ZWxhIHJlbGF0YWRhIGRlIDUwIHRvbnMgcGFyYSBvIHN0aWNrLixDb21wYXJhciBwcm9mdW5kaWRhZGUgZSBkaXN0cmlidWnDp8OjbyBkZSBzdWJ0b25zOyBuw6NvIHVzYXIgYSBjb250YWdlbSBjb21vIHByb3ZhIGRlIGluY2x1c8Ojby4saHR0cHM6Ly9yZXZpc3RhbWFyaWVjbGFpcmUuZ2xvYm8uY29tL2JlbGV6YS9ub3RpY2lhLzIwMjQvMTAvbWFxdWlhZ2VtLWJvY2Etcm9zYS10ZXN0YW1vcy1vcy1yZWxhbmNhbWVudG9zLWUtZXNzYXMtc2FvLW5vc3Nhcy1pbXByZXNzb2VzLmdodG1sCg==\", BinaryEncoding.Base64),",
+                "    Dados = Csv.Document(Conteudo, [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Cabecalhos = Table.PromoteHeaders(Dados, [PromoteAllScalars=true]),",
+                "    Tipos = Table.TransformColumnTypes(Cabecalhos, {{\"ordem\", Int64.Type}, {\"referencia\", type text}, {\"escopo\", type text}, {\"evidencia\", type text}, {\"aplicacao\", type text}, {\"fonte\", type text}}, \"pt-BR\")",
+                "in",
+                "    Tipos"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Prioridades",
+        "lineageTag": "c933b7ba-206b-556a-bbbf-611eccc8af96",
+        "columns": [
+          {
+            "name": "Ordem",
+            "sourceColumn": "ordem",
+            "dataType": "int64",
+            "summarizeBy": "none",
+            "lineageTag": "b40c67f5-7593-5acc-90e1-f1b4b24cc959"
+          },
+          {
+            "name": "Decisão",
+            "sourceColumn": "decisao",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "1060b397-251a-55e7-ba52-582dad49c2c8"
+          },
+          {
+            "name": "Atrito para investigar",
+            "sourceColumn": "risco",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "4be8a0b9-e31d-597a-8ea2-4fc1dd26628b"
+          },
+          {
+            "name": "Teste proposto",
+            "sourceColumn": "teste",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "184ac75b-7316-5242-ac4a-d057a08116da"
+          },
+          {
+            "name": "Indicador",
+            "sourceColumn": "metrica",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "d712038e-6f1a-50e2-9877-d958da23767c"
+          },
+          {
+            "name": "Regra de decisão",
+            "sourceColumn": "criterio",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "bb6cc275-1c10-56bf-9a54-95e01898fd2f"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Prioridades",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Conteudo = Binary.FromText(\"b3JkZW0sZGVjaXNhbyxyaXNjbyx0ZXN0ZSxtZXRyaWNhLGNyaXRlcmlvCjEsR3VpYSBkZSB0b25zIGUgc3VidG9ucyxDb21wcmFyIHVtIHRvbSBpbmFkZXF1YWRvLERpc3RyaWJ1aXIgYWxlYXRvcmlhbWVudGUgZmljaGEgc2ltcGxlcyBlIGd1aWEgZGUgcHJvdMOzdGlwbyBtYW50ZW5kbyBwcmXDp28gZSB0ZXh0byBpZ3VhaXMuLENvbmZpYW7Dp2EgYWx0YSBuYSBlc2NvbGhhIGUgb3DDp8OjbyBuw6NvIGNvbnNlZ3VpIGVzY29saGVyLixBdmFuw6dhciBubyBwaWxvdG8gc2UgaG91dmVyIGF1bWVudG8gZGUgcGVsbyBtZW5vcyAxMCBwb250b3MgcGVyY2VudHVhaXMgbmEgY29uZmlhbsOnYSBzZW0gYXVtZW50byBkYSBpbmRlY2lzw6NvLgoyLEZvcm1hdG8gZGUgZGVtb25zdHJhw6fDo28sQ29uZnVuZGlyIGNvYmVydHVyYSBvdSBjcmlhciBleHBlY3RhdGl2YSBkZSBkdXJhw6fDo28sTW9zdHJhciB1bWEgZSBkdWFzIGNhbWFkYXMgY29tIGEgbWVzbWEgcHJlcGFyYcOnw6NvOyB0ZXN0YXIgY29tIGUgc2VtIHDDsyBlbSBob3LDoXJpb3MgZml4b3MuLE1hcmNhw6fDo28gZGUgbGluaGFzIGUgY29uZm9ydG8gcGVyY2ViaWRvIGVtIGNhZGEgY29uZGnDp8Ojby4sQ29uc2lkZXJhciBhanVzdGFyIGEgZGVtb25zdHJhw6fDo28gb3UgaW5zdHJ1w6fDtWVzIHNlIG8gcGFkcsOjbyBzZSByZXBldGlyIGVtIG1haXMgZGUgdW0gcGVyZmlsOyBuw6NvIGF0cmlidWlyIGNhdXNhIHPDsyBhb3MgY29tZW50w6FyaW9zLgozLFJlcG9zacOnw6NvIHBvciB0b25hbGlkYWRlLERlc2lzdGlyIHF1YW5kbyBmYWx0YSBhIGNvciBjZXJ0YSxTaW11bGFyIGluZGlzcG9uaWJpbGlkYWRlIGRhIGNvciBlc2NvbGhpZGEgY29tIGUgc2VtIGF2aXNvIHBvciB0b25hbGlkYWRlLixJbnRlbsOnw6NvIGRlIHBlZGlyIGF2aXNvIGVtIHZleiBkZSBhYmFuZG9uYXIgb3UgdHJvY2FyIHBvciB1bSB0b20gaW5hZGVxdWFkby4sU8OzIHN1Z2VyaXIgaW1wbGFudGHDp8OjbyBkZXBvaXMgZGUgbWVkaXIgbyBjb21wb3J0YW1lbnRvOyBuw6NvIGluZmVyaXIgZGVtYW5kYSBhIHBhcnRpciBkYSBhdXPDqm5jaWEgZGUgZXN0b3F1ZS4KNCxSZWZvcm11bGHDp8OjbyxBdHJpYnVpciB1bSBwcm9ibGVtYSBkZSB0w6ljbmljYSBvdSBzdWJ0b20gw6AgZsOzcm11bGEsTsOjbyBwcmlvcml6YXIgbmVzdGEgZmFzZTsgZXhpZ2lyIHJlbGF0b3MgZGUgdXNvIHJlcHJvZHV6w612ZWlzIGUgdGVzdGUgY29tcGFyw6F2ZWwuLFJlcGV0acOnw6NvIHBvciBsb3RlIGUgY29uZGnDp8OjbyBkZSB1c28uLE7Do28gcmVjb21lbmRhciBhbHRlcmFyIGluZ3JlZGllbnRlcyBhIHBhcnRpciBkZXN0YSBhbW9zdHJhLgo=\", BinaryEncoding.Base64),",
+                "    Dados = Csv.Document(Conteudo, [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Cabecalhos = Table.PromoteHeaders(Dados, [PromoteAllScalars=true]),",
+                "    Tipos = Table.TransformColumnTypes(Cabecalhos, {{\"ordem\", Int64.Type}, {\"decisao\", type text}, {\"risco\", type text}, {\"teste\", type text}, {\"metrica\", type text}, {\"criterio\", type text}}, \"pt-BR\")",
+                "in",
+                "    Tipos"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Indicadores",
+        "lineageTag": "e95d85d8-626e-5ff1-bbb5-a7055687e4f8",
+        "columns": [
+          {
+            "name": "Ordem",
+            "sourceColumn": "ordem",
+            "dataType": "int64",
+            "summarizeBy": "none",
+            "lineageTag": "c4f7a50c-b454-58e6-8560-2f42d7d0b56b"
+          },
+          {
+            "name": "Indicador",
+            "sourceColumn": "indicador",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "147c2a32-7528-5f39-b189-7899ec15113b"
+          },
+          {
+            "name": "Cálculo",
+            "sourceColumn": "calculo",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "f4fd6f6d-f9c4-5ffb-bc4e-9223e19b375e"
+          },
+          {
+            "name": "Como interpretar",
+            "sourceColumn": "precaucao",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "lineageTag": "9bf96ca1-908c-5239-8389-9f5727721cd9"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Indicadores",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Conteudo = Binary.FromText(\"b3JkZW0saW5kaWNhZG9yLGNhbGN1bG8scHJlY2F1Y2FvCjEsQ29uZmlhbsOnYSBhbHRhIG5hIGVzY29saGEsUmVzcG9zdGFzIDTigJM1IGVtIDUgZGl2aWRpZGFzIHBlbGFzIHJlc3Bvc3RhcyB2w6FsaWRhcyDDoCBwZXJndW50YSxJbmRpY2Fkb3IgcHJpbcOhcmlvIGRvIHBpbG90bzsgbW9zdHJhciBuIHBvciB2YXJpYW50ZS4KMixJbmRlY2lzw6NvIGRlIHRvbSxSZXNwb3N0YXMgbsOjbyBvdSBhaW5kYSBuw6NvIHNlaSBkaXZpZGlkYXMgcGVsYXMgcmVzcG9zdGFzIHbDoWxpZGFzLEluZGljYWRvciBkZSBwcm90ZcOnw6NvOyBuw6NvIHRyYXRhciBhdXPDqm5jaWEgZGUgcmVzcG9zdGEgY29tbyBpbmRlY2lzw6NvLgozLEludGVuw6fDo28gZGUgY29tcHJhIGFsdGEsUmVzcG9zdGFzIDTigJM1IGVtIDUgZGl2aWRpZGFzIHBlbGFzIHJlc3Bvc3RhcyB2w6FsaWRhcyDDoCBwZXJndW50YSxJbnRlbsOnw6NvIGRlY2xhcmFkYSBlbSB1bSBjZW7DoXJpbzsgbsOjbyDDqSBjb21wcmEgbmVtIGNvbnZlcnPDo28uCjQsQmFycmVpcmEgZGUgY29tcHJhLERpc3RyaWJ1acOnw6NvIGRhIGJhcnJlaXJhIHByaW5jaXBhbCBkZWNsYXJhZGEsT3V0cm9zIG1vdGl2b3MgZSBuZW5odW1hIGJhcnJlaXJhIHBlcm1hbmVjZW0gb3DDp8O1ZXMgZGlzdGludGFzLgo1LE1lbGhvcmlhIHByZWZlcmlkYSxEaXN0cmlidWnDp8OjbyBkYSBlc2NvbGhhIHByaW5jaXBhbCBlbnRyZSByZXNwb3N0YXMgdsOhbGlkYXMsSW5jbHVpciBuZW5odW1hIGRlc3RhczsgbsOjbyBmb3LDp2FyIHByZWZlcsOqbmNpYS4KNixBw6fDo28gc2UgYSBjb3IgZmFsdGFyLERpc3RyaWJ1acOnw6NvIGRhcyBhw6fDtWVzIGRlY2xhcmFkYXMgZW0gdW0gY2Vuw6FyaW8gZGUgaW5kaXNwb25pYmlsaWRhZGUsTsOjbyBlc3RpbWEgZXN0b3F1ZSBvdSBkZW1hbmRhIHJlcHJpbWlkYS4K\", BinaryEncoding.Base64),",
+                "    Dados = Csv.Document(Conteudo, [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Cabecalhos = Table.PromoteHeaders(Dados, [PromoteAllScalars=true]),",
+                "    Tipos = Table.TransformColumnTypes(Cabecalhos, {{\"ordem\", Int64.Type}, {\"indicador\", type text}, {\"calculo\", type text}, {\"precaucao\", type text}}, \"pt-BR\")",
+                "in",
+                "    Tipos"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

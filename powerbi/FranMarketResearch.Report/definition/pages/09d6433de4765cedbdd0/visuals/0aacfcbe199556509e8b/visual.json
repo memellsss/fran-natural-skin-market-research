@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "0aacfcbe199556509e8b",
+  "position": {
+    "x": 24,
+    "y": 152,
+    "width": 1232,
+    "height": 127,
+    "z": 2000,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Você compraria uma base online sem ter certeza do tom?",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "23pt",
+                      "color": "#84184D",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "O teste compara a mesma ficha e o mesmo preço, com ou sem a descrição de um guia de tonalidades.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "13pt",
+                      "color": "#32232E",
+                      "fontWeight": "normal"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Confiança e intenção são medidas separadamente. Não há dados de vendas neste relatório.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "12pt",
+                      "color": "#634C5C",
+                      "fontWeight": "normal"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

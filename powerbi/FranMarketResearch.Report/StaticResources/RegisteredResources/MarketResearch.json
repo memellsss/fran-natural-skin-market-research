@@ -1,0 +1,11 @@
+{
+  "name": "Pesquisa de mercado",
+  "dataColors": [
+    "#84184D",
+    "#514070",
+    "#4E7775"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#32232E",
+  "tableAccent": "#84184D"
+}

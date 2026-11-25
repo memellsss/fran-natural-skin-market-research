@@ -1,0 +1,7 @@
+ordem,indicador,calculo,precaucao
+1,Confiança alta na escolha,Respostas 4–5 em 5 divididas pelas respostas válidas à pergunta,Indicador primário do piloto; mostrar n por variante.
+2,Indecisão de tom,Respostas não ou ainda não sei divididas pelas respostas válidas,Indicador de proteção; não tratar ausência de resposta como indecisão.
+3,Intenção de compra alta,Respostas 4–5 em 5 divididas pelas respostas válidas à pergunta,Intenção declarada em um cenário; não é compra nem conversão.
+4,Barreira de compra,Distribuição da barreira principal declarada,Outros motivos e nenhuma barreira permanecem opções distintas.
+5,Melhoria preferida,Distribuição da escolha principal entre respostas válidas,Incluir nenhuma destas; não forçar preferência.
+6,Ação se a cor faltar,Distribuição das ações declaradas em um cenário de indisponibilidade,Não estima estoque ou demanda reprimida.
